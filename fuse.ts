@@ -1,12 +1,4 @@
-import {
-   CSSModules,
-   CSSPlugin,
-   CSSResourcePlugin,
-   FuseBox,
-   FuseBoxOptions,
-   SassPlugin,
-   Sparky
-} from "fuse-box";
+import { CSSPlugin, FuseBox, FuseBoxOptions, Sparky } from "fuse-box";
 import path = require("path");
 import TsTransformClasscat from "ts-transform-classcat";
 import TsTransformInferno from "ts-transform-inferno";
@@ -24,7 +16,10 @@ const fuseOptions: FuseBoxOptions = {
     */
    transformers: {
       before: [TsTransformClasscat(), TsTransformInferno()]
-   },
+   }
+};
+const fuseClientOptions: FuseBoxOptions = {
+   ...fuseOptions,
    plugins: [
       /**
        * https://fuse-box.org/page/css-resource-plugin
@@ -33,8 +28,11 @@ const fuseOptions: FuseBoxOptions = {
        * Make .css files modules like and allow import it from node_modules too {CSSResourcePlugin}
        * Use them all and bundle with {CSSPlugin}
        * */
-      [SassPlugin(), CSSModules(), CSSResourcePlugin(), CSSPlugin()]
+      CSSPlugin()
    ]
+};
+const fuseServerOptions: FuseBoxOptions = {
+   ...fuseOptions
 };
 Sparky.task("clean", () => {
    /**Clean distribute (dist) folder */
@@ -47,6 +45,7 @@ Sparky.task("config", () => {
    fuse.dev();
 });
 Sparky.task("client", () => {
+   fuse.opts = fuseClientOptions;
    fuse
       .bundle("client/bundle")
       .target("browser@esnext")
@@ -55,6 +54,8 @@ Sparky.task("client", () => {
       .instructions("> client/index.tsx");
 });
 Sparky.task("server", () => {
+   /**Workaround. Should be fixed */
+   fuse.opts = fuseServerOptions;
    fuse
       .bundle("server/bundle")
       .watch("**")
@@ -62,10 +63,11 @@ Sparky.task("server", () => {
       .instructions("> [server/index.tsx]")
       .completed(proc => {
          proc.require({
+            // tslint:disable-next-line:no-shadowed-variable
             close: ({ FuseBox }) => FuseBox.import(FuseBox.mainFile).shutdown()
          });
       });
 });
-Sparky.task("dev", ["&clean", "&config", "server", "client"], () => {
+Sparky.task("dev", ["&clean", "&config", "&client", "&server"], () => {
    fuse.run();
 });

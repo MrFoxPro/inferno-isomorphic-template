@@ -20,7 +20,6 @@
       "ts-transform-classcat": "^0.1.0",
       "ts-transform-inferno": "^2.2.0",
       "tslint-react-recommended": "^1.0.15",
-      "typescript": "^2.9.1",
-      "uglify-es": "^3.3.9"
+      "typescript": "^2.9.1"
    }
 }
