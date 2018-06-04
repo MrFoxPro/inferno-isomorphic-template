@@ -7,6 +7,7 @@ import {
    SassPlugin,
    Sparky
 } from "fuse-box";
+import path = require("path");
 import TsTransformClasscat from "ts-transform-classcat";
 import TsTransformInferno from "ts-transform-inferno";
 /**
@@ -37,7 +38,9 @@ const fuseOptions: FuseBoxOptions = {
 };
 Sparky.task("clean", () => {
    /**Clean distribute (dist) folder */
-   Sparky.src("./").clean("/dist");
+   Sparky.src("dist")
+      .clean("dist")
+      .exec();
 });
 Sparky.task("config", () => {
    fuse = FuseBox.init(fuseOptions);
@@ -54,7 +57,7 @@ Sparky.task("client", () => {
 Sparky.task("server", () => {
    fuse
       .bundle("server/bundle")
-      .watch("server/**")
+      .watch("**")
       .target("server@esnext")
       .instructions("> [server/index.tsx]")
       .completed(proc => {
