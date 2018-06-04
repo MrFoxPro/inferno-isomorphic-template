@@ -1,4 +1,4 @@
-#Simple Inferno Isomorphic (SSR) FuseBox template
+# Simple Inferno Isomorphic (SSR) FuseBox template
 
 Inferno + Express + Routing + TypeScript + FuseBox
 Includes:
@@ -9,10 +9,11 @@ Includes:
 -  FuseBox 3.2.2 (easy alternative to webpack)
 
 # Installation:
-`
-npm i 
+```
+npm i
+
 npm run dev
-`
+```
 
 # Q&A:
 
