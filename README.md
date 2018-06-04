@@ -14,7 +14,8 @@ npm i
 
 npm run dev
 ```
-If you are not Windows user, please change dev script in package.json: remove `set` word
+If you are not Windows user, please change dev script in package.json: remove `set` word.  
+Note: debug mode works only for vscode (check out .vscode/launch.json)
 # Q&A:
 
 Q: Why npm run dev uses **node**, not **ts-node**?  
