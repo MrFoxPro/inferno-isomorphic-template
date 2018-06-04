@@ -13,14 +13,17 @@ server.use("/static", express.static(path.resolve("./dist/client")));
 
 server.use(cookieParser());
 
-server.get("/", (req, res) => {
+server.get("/*", (req, res) => {
    const context = {} as any;
+
    const wrapper = (
       <StaticRouter location={req.url} context={context}>
          <App />
       </StaticRouter>
    );
-   if (context.url) { return res.redirect(context.url); }
+   if (context.url) {
+      return res.redirect(context.url);
+   }
 
    res.send(`
    <!doctype html>

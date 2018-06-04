@@ -14,7 +14,7 @@ export default class Home extends Component<IProps, IState> {
    public render() {
       return (
          <div>
-            Privet
+            Home page
             <button onClick={this.click}>Click me</button>
          </div>
       );

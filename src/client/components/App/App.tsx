@@ -11,13 +11,11 @@ export default class App extends Component<IProps, IState> {
       return (
          <div>
             <div>
-               <Link to="/Home">Home</Link>
+               <Link to="/Home">Go Home</Link>
             </div>
             <div>
                <Switch>
-                  <Route exact path="/Home" component={Home}>
-                     Go Home
-                  </Route>
+                  <Route exact path="/Home" component={Home} />
                </Switch>
             </div>
          </div>
