@@ -1,0 +1,14 @@
+{
+   "extends": "tslint:recommended",
+   "rules": {
+      "eofline": true,
+      "linebreak-style": [true, "CRLF"],
+      "object-literal-sort-keys": false,
+      "jsdoc-format": false,
+      "trailing-comma": false,
+      "arrow-parens": false,
+      "member-ordering": false,
+      "no-console": false,
+      "no-empty-interface": false
+   }
+}
