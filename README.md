@@ -1,8 +1,5 @@
 # Simple Inferno Isomorphic (SSR) FuseBox template
-
-Inferno + Express + Routing + TypeScript + FuseBox
 Includes:
-
 -  Inferno 5.0.6
 -  Express 4.16.0
 -  TypeScript 2.9.1
