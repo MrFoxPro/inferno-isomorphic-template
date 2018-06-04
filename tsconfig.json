@@ -3,7 +3,6 @@
       "module": "commonjs",
       "target": "esnext",
       "sourceMap": true,
-      "inlineSources": true,
       "jsx": "preserve",
       "importHelpers": true,
       "emitDecoratorMetadata": true,
