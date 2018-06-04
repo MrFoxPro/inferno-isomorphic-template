@@ -47,14 +47,14 @@ Sparky.task("client", () => {
    fuse
       .bundle("client/bundle")
       .target("browser@esnext")
-      .watch("./client/**")
+      .watch("client/**")
       .hmr()
       .instructions("> client/index.tsx");
 });
 Sparky.task("server", () => {
    fuse
       .bundle("server/bundle")
-      .watch("*./server/**")
+      .watch("server/**")
       .target("server@esnext")
       .instructions("> [server/index.tsx]")
       .completed(proc => {
