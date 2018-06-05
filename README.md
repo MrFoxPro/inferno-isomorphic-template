@@ -31,7 +31,7 @@ A: Explanation how it works:
    1. The server renders markups with renderToString
    2. We have got only plain text document without any JS
    3. Bundle.js is loaded and create Inferno instance, that "clings" DOM
-   4. Inferno binds events
+   4. Inferno binds events  
       Good explanation: https://medium.com/@justinjung04/react-server-side-rendering-and-hot-reloading-ffb87ca81a89
 
 Q: Why **ts-node** installed as devDependency?  
