@@ -9,6 +9,8 @@
       "arrow-parens": false,
       "member-ordering": false,
       "no-console": false,
-      "no-empty-interface": false
+      "no-empty-interface": false,
+      "no-trailing-whitespace": false,
+      "ordered-imports": false
    }
 }

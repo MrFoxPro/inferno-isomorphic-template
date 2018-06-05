@@ -44,6 +44,9 @@ Sparky.task("config", () => {
    fuse = FuseBox.init(fuseOptions);
    fuse.dev();
 });
+Sparky.task("test", ["&clean", "&config"], () => {
+   fuse.bundle("client/bundle").test("[**/**.test.tsx]", null);
+});
 Sparky.task("client", () => {
    fuse.opts = fuseClientOptions;
    fuse
