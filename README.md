@@ -4,7 +4,8 @@ Includes:
 -  Express 4.16.0
 -  TypeScript 2.9.1
 -  FuseBox 3.2.2 (easy alternative to webpack)
-
+-  Routing by inferno-router 5.0.6
+-  Tests by FuseBox test runner and enzyme with [enzyme-adapter-inferno](https://github.com/bbc/enzyme-adapter-inferno)
 # Installation:
 ```
 npm i
