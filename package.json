@@ -22,6 +22,7 @@
       "enzyme-adapter-inferno": "^1.3.0",
       "fuse-box": "^3.2.2",
       "fuse-test-runner": "^1.0.16",
+      "inferno-devtools": "^5.0.6",
       "inferno-test-utils": "^5.0.6",
       "jest": "^23.1.0",
       "jsdom": "11.11.0",
