@@ -36,5 +36,8 @@ A: Explanation how it works:
 Q: Why **ts-node** installed as devDependency?  
 A: https://stackoverflow.com/a/44249080/8086153
 
+Q: Why ```import "jsdom-global/register";``` in test file?  
+A: https://github.com/airbnb/enzyme/issues/341#issuecomment-263045603  
+
 Q: I have an error  
 A: Please submit new issue with detailed description of your problem
