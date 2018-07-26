@@ -42,3 +42,6 @@ A: https://github.com/airbnb/enzyme/issues/341#issuecomment-263045603
 
 Q: I have an error  
 A: Please submit new issue with detailed description of your problem
+
+Q: How to use it with Azure?
+A: Create Azure Web App for Linux and upload docker container. Then you should set variable WEBSITES_PORT to 80 (or any other that you used in server/index.ts) in App settings section.
